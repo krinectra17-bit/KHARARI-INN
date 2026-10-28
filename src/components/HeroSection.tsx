@@ -59,28 +59,28 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking: _onOpen
   };
 
   return (
-    <section id="home" className="relative pt-18 sm:pt-22 lg:pt-28 pb-8 sm:pb-12 bg-ivory">
+    <section id="home" className="relative pt-4 sm:pt-6 lg:pt-8 pb-8 sm:pb-12 bg-ivory">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Eyebrow matching reference mockup */}
-        <div className="flex items-center gap-2.5 mb-2 sm:mb-3">
+        {/* Eyebrow: A BOUTIQUE STAY IN */}
+        <div className="flex items-center gap-2.5 mb-2.5 sm:mb-3">
           <span className="h-[1.5px] w-6 sm:w-8 bg-[#A6753C]"></span>
           <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#A6753C]">
             A BOUTIQUE STAY IN
           </span>
         </div>
 
-        {/* Headline matching reference mockup */}
-        <h1 className="font-serif text-[2.5rem] leading-[1.08] sm:text-5xl lg:text-6xl font-normal text-charcoal mb-3 tracking-tight">
-          Ayodhya Dham
+        {/* Full Visible Heading: Your Comfortable Stay in Ayodhya Dham */}
+        <h1 className="font-serif text-[2.15rem] leading-[1.15] sm:text-4xl md:text-5xl lg:text-6xl font-normal text-charcoal mb-3 tracking-tight">
+          Your Comfortable Stay in <span className="italic font-serif text-[#A6753C]">Ayodhya Dham</span>
         </h1>
 
         {/* Short, elegant supporting copy */}
-        <p className="text-sm sm:text-base text-warm-grey-dark leading-relaxed font-normal mb-5 max-w-xl">
+        <p className="text-xs sm:text-sm md:text-base text-warm-grey-dark leading-relaxed font-normal mb-5 max-w-xl">
           Comfortable rooms, warm hospitality and a convenient location for your spiritual journey.
         </p>
 
-        {/* CTA Buttons side-by-side matching reference mockup */}
+        {/* CTA Buttons side-by-side */}
         <div className="flex items-center gap-2.5 sm:gap-3.5 mb-6 sm:mb-8">
           <button
             type="button"
@@ -102,7 +102,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking: _onOpen
           </a>
         </div>
 
-        {/* Prominent Hotel Exterior Photograph immediately visible on mobile */}
+        {/* Prominent Hotel Exterior Photograph */}
         <div className="relative rounded-2xl overflow-hidden shadow-soft border border-border/80 bg-white group mb-6">
           <div className="aspect-[4/3] sm:aspect-[16/10] overflow-hidden bg-sand/30">
             <img
@@ -122,7 +122,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking: _onOpen
           </div>
         </div>
 
-        {/* Location Strip matching reference mockup */}
+        {/* Location Strip */}
         <div className="bg-[#FAF6F0] border border-border/80 rounded-2xl p-3 sm:p-4 mb-6 shadow-subtle flex items-center justify-between gap-3">
           <div className="flex items-center gap-3 text-left min-w-0">
             <div className="w-9 h-9 rounded-full bg-[#EFE6D8] text-[#A6753C] flex items-center justify-center shrink-0 border border-border/50">
@@ -152,7 +152,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking: _onOpen
           </div>
         </div>
 
-        {/* Key Property Highlights Strip matching reference mockup */}
+        {/* Key Property Highlights Strip */}
         <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-2 pb-6 border-b border-border/60 text-center">
           
           {/* Highlight 1: Shri Ram Janmabhoomi */}

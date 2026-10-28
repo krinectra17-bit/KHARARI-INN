@@ -41,10 +41,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+      className={`sticky top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
           ? 'bg-ivory/95 backdrop-blur-md shadow-subtle border-b border-border py-2.5 sm:py-3'
-          : 'bg-ivory/90 backdrop-blur-sm border-b border-border/50 py-3 sm:py-4'
+          : 'bg-ivory/95 backdrop-blur-sm border-b border-border/50 py-3 sm:py-3.5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

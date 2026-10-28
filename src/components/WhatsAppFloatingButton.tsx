@@ -10,7 +10,7 @@ export const WhatsAppFloatingButton: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-22 right-4 sm:bottom-6 sm:right-6 z-40 flex items-center gap-3">
+    <div className="fixed bottom-24 sm:bottom-6 right-4 sm:right-6 z-40 flex items-center gap-3">
       {/* Desktop Tooltip */}
       <div className="hidden md:flex items-center bg-white/95 backdrop-blur-sm border border-border shadow-soft px-3 py-1.5 rounded-lg text-xs font-medium text-charcoal">
         <span>Instant WhatsApp Enquiry</span>
@@ -21,7 +21,7 @@ export const WhatsAppFloatingButton: React.FC = () => {
         type="button"
         onClick={handleClick}
         aria-label="Chat with Kharari Inn on WhatsApp"
-        className="w-12 h-12 sm:w-13 sm:h-13 bg-[#25D366] hover:bg-[#20ba59] active:scale-95 text-white rounded-full shadow-[0_4px_16px_rgba(37,211,102,0.35)] transition-all duration-200 flex items-center justify-center focus:outline-none focus:ring-4 focus:ring-[#25D366]/40"
+        className="w-12 h-12 sm:w-13 sm:h-13 bg-[#25D366] hover:bg-[#20ba59] active:scale-95 text-white rounded-full shadow-[0_4px_16px_rgba(37,211,102,0.35)] transition-all duration-200 flex items-center justify-center focus:outline-none focus:ring-4 focus:ring-[#25D366]/40 cursor-pointer"
       >
         <svg
           viewBox="0 0 24 24"
