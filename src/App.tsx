@@ -28,7 +28,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-ivory text-charcoal selection:bg-gold/20 selection:text-charcoal relative">
+    <div className="min-h-screen flex flex-col bg-ivory text-charcoal selection:bg-gold/20 selection:text-charcoal relative pb-20 sm:pb-0">
       {/* Header */}
       <Header onOpenBooking={handleOpenBooking} />
 

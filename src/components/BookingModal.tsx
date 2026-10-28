@@ -139,13 +139,13 @@ export const BookingModal: React.FC<BookingModalProps> = ({
       onClick={onClose}
     >
       <div
-        className="relative bg-white rounded-sm border border-border shadow-elevated w-full max-w-xl my-8 overflow-hidden animate-fadeIn"
+        className="relative bg-white rounded-2xl border border-border/80 shadow-elevated w-full max-w-xl my-8 overflow-hidden animate-fadeIn"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
         <div className="bg-sand-light px-6 py-5 border-b border-border flex items-center justify-between">
           <div>
-            <span className="text-[10px] uppercase tracking-widest font-semibold text-gold-dark block">
+            <span className="text-[10px] uppercase tracking-widest font-semibold text-[#A6753C] block">
               Official WhatsApp Booking Enquiry
             </span>
             <h2 id="booking-modal-title" className="font-serif text-2xl font-normal text-charcoal">
@@ -156,7 +156,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 text-warm-grey hover:text-charcoal hover:bg-border/40 rounded-sm transition-colors focus:outline-none focus:ring-2 focus:ring-gold"
+            className="p-1.5 text-warm-grey hover:text-charcoal hover:bg-border/40 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-gold"
             aria-label="Close booking modal"
           >
             <X className="w-5 h-5" />
@@ -188,7 +188,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 onChange={(e) => setFormData({ ...formData, guestName: e.target.value })}
                 className={`w-full pl-9 pr-3 py-2.5 text-sm bg-white border ${
                   errors.guestName ? 'border-terracotta ring-1 ring-terracotta' : 'border-border focus:border-gold'
-                } rounded-sm focus:outline-none text-charcoal`}
+                } rounded-xl focus:outline-none text-charcoal`}
                 required
               />
             </div>
@@ -216,7 +216,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                   onChange={(e) => setFormData({ ...formData, checkInDate: e.target.value })}
                   className={`w-full pl-9 pr-3 py-2.5 text-sm bg-white border ${
                     errors.checkInDate ? 'border-terracotta ring-1 ring-terracotta' : 'border-border focus:border-gold'
-                  } rounded-sm focus:outline-none text-charcoal`}
+                  } rounded-xl focus:outline-none text-charcoal`}
                   required
                 />
               </div>
@@ -242,7 +242,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                   onChange={(e) => setFormData({ ...formData, checkOutDate: e.target.value })}
                   className={`w-full pl-9 pr-3 py-2.5 text-sm bg-white border ${
                     errors.checkOutDate ? 'border-terracotta ring-1 ring-terracotta' : 'border-border focus:border-gold'
-                  } rounded-sm focus:outline-none text-charcoal`}
+                  } rounded-xl focus:outline-none text-charcoal`}
                   required
                 />
               </div>
@@ -268,7 +268,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 <select
                   value={formData.adults}
                   onChange={(e) => setFormData({ ...formData, adults: Number(e.target.value) })}
-                  className="w-full pl-9 pr-3 py-2.5 text-sm bg-white border border-border focus:border-gold rounded-sm focus:outline-none text-charcoal"
+                  className="w-full pl-9 pr-3 py-2.5 text-sm bg-white border border-border focus:border-gold rounded-xl focus:outline-none text-charcoal"
                 >
                   <option value={1}>1 Adult</option>
                   <option value={2}>2 Adults</option>
@@ -288,7 +288,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               <select
                 value={formData.children}
                 onChange={(e) => setFormData({ ...formData, children: Number(e.target.value) })}
-                className="w-full px-3 py-2.5 text-sm bg-white border border-border focus:border-gold rounded-sm focus:outline-none text-charcoal"
+                className="w-full px-3 py-2.5 text-sm bg-white border border-border focus:border-gold rounded-xl focus:outline-none text-charcoal"
               >
                 <option value={0}>0 Children</option>
                 <option value={1}>1 Child</option>
@@ -305,7 +305,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               <select
                 value={formData.roomType}
                 onChange={(e) => setFormData({ ...formData, roomType: e.target.value })}
-                className="w-full px-3 py-2.5 text-sm bg-white border border-border focus:border-gold rounded-sm focus:outline-none text-charcoal"
+                className="w-full px-3 py-2.5 text-sm bg-white border border-border focus:border-gold rounded-xl focus:outline-none text-charcoal"
               >
                 {ROOMS.map((r) => (
                   <option key={r.id} value={r.name}>
@@ -329,7 +329,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 placeholder="e.g. +91 98765 43210"
                 value={formData.contactNumber}
                 onChange={(e) => setFormData({ ...formData, contactNumber: e.target.value })}
-                className="w-full pl-9 pr-3 py-2.5 text-sm bg-white border border-border focus:border-gold rounded-sm focus:outline-none text-charcoal"
+                className="w-full pl-9 pr-3 py-2.5 text-sm bg-white border border-border focus:border-gold rounded-xl focus:outline-none text-charcoal"
               />
             </div>
           </div>
@@ -344,7 +344,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               placeholder="e.g. Ground floor preference for senior citizens, early morning temple darshan arrival, parking space requirement..."
               value={formData.additionalRequirements}
               onChange={(e) => setFormData({ ...formData, additionalRequirements: e.target.value })}
-              className="w-full px-3 py-2 text-sm bg-white border border-border focus:border-gold rounded-sm focus:outline-none text-charcoal"
+              className="w-full px-3 py-2 text-sm bg-white border border-border focus:border-gold rounded-xl focus:outline-none text-charcoal"
             />
           </div>
 
@@ -358,7 +358,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               <button
                 type="button"
                 onClick={onClose}
-                className="w-1/2 sm:w-auto px-4 py-2.5 text-xs font-medium text-charcoal hover:bg-sand/40 border border-border rounded-sm transition-colors"
+                className="w-1/2 sm:w-auto px-4 py-2.5 text-xs font-semibold text-charcoal hover:bg-sand/40 border border-border rounded-xl transition-colors"
               >
                 Cancel
               </button>
@@ -366,7 +366,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-1/2 sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 text-xs uppercase tracking-wider font-semibold text-white bg-[#25D366] hover:bg-[#20ba59] rounded-sm transition-all shadow-subtle hover:shadow-soft active:scale-[0.98]"
+                className="w-1/2 sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 text-xs font-semibold text-white bg-[#25D366] hover:bg-[#20ba59] rounded-xl transition-all shadow-subtle hover:shadow-soft active:scale-[0.98]"
               >
                 <MessageSquare className="w-4 h-4" />
                 <span>{isSubmitting ? 'Opening WhatsApp...' : 'Send on WhatsApp'}</span>
