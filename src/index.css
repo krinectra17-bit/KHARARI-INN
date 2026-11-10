@@ -1,3 +1,10 @@
+/* Hallmark · shape: settled · genre: editorial · theme: brand · redesign: full
+ * paper: oklch(97.8% 0.012 85) · accent: oklch(58% 0.11 68) · display: Cormorant Garamond · body: Plus Jakarta Sans · hero: Settled · nav: Bar · footer: Cap · signature: authentic property photography
+ * axes: light/roman-serif/warm · posture: settled · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5 · weakest: H, refined spacing around hero */
+@import "./tokens.css";
+@import "./base.css" layer(base);
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,52 +12,45 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 4.5rem;
+    scroll-padding-top: var(--space-3xl);
     -webkit-tap-highlight-color: transparent;
+    overflow-x: clip;
   }
   
   body {
-    background-color: #FAF8F3;
-    color: #29251F;
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    overflow-x: clip;
   }
 
   ::selection {
-    background-color: rgba(183, 139, 80, 0.25);
-    color: #29251F;
+    background-color: color-mix(in oklab, var(--color-accent) 22%, transparent);
+    color: var(--color-ink);
   }
 }
 
-/* Custom scrollbar for elegant aesthetic */
+/* Scrollbar styling using tokens */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: var(--space-xs);
+  height: var(--space-xs);
 }
 
 ::-webkit-scrollbar-track {
-  background: #FAF8F3;
+  background: var(--color-paper);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D4CABA;
-  border-radius: 4px;
+  background: var(--color-rule);
+  border-radius: var(--space-2xs);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #B78B50;
+  background: var(--color-accent);
 }
 
-/* Ensure focus states are accessible */
+/* Ensure focus states are accessible and immediate */
 :focus-visible {
-  outline: 2px solid #B78B50;
+  outline: 2px solid var(--color-focus);
   outline-offset: 2px;
-}
-
-/* Subtle image zoom transition */
-.img-zoom {
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.group:hover .img-zoom {
-  transform: scale(1.03);
 }

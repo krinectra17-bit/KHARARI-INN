@@ -17,9 +17,8 @@ import {
 import { AMENITIES } from '../data/hotelData';
 
 export const AmenitiesSection: React.FC = () => {
-  // Mapping string to Lucide icon components
   const renderIcon = (iconName: string) => {
-    const props = { className: 'w-5 h-5 text-gold-dark' };
+    const props = { className: 'w-5 h-5 text-accent' };
     switch (iconName) {
       case 'Wind':
         return <Wind {...props} />;
@@ -51,43 +50,39 @@ export const AmenitiesSection: React.FC = () => {
   };
 
   return (
-    <section id="amenities" className="py-16 sm:py-20 lg:py-24 bg-sand-light border-y border-border">
+    <section id="amenities" className="py-16 sm:py-20 lg:py-24 bg-paper-2/40 border-b border-rule">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 mb-3">
-            <span className="h-px w-8 bg-gold"></span>
-            <span className="text-xs uppercase tracking-widest font-semibold text-gold-dark">
-              Facilities & Conveniences
-            </span>
-            <span className="h-px w-8 bg-gold"></span>
-          </div>
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+          <p className="text-xs text-accent font-medium mb-2.5">
+            Facilities and conveniences
+          </p>
 
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-charcoal tracking-tight mb-4">
-            Practical Amenities for a <span className="italic font-serif text-gold-dark">Peaceful Stay</span>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-ink tracking-tight mb-4">
+            Practical Amenities for a Peaceful Stay
           </h2>
 
-          <p className="text-base sm:text-lg text-warm-grey-dark leading-relaxed font-normal">
+          <p className="text-sm sm:text-base text-muted leading-relaxed font-normal">
             We provide verified, practical in-room comforts and property infrastructure to ensure your spiritual journey in Ayodhya Dham is restful and worry-free.
           </p>
         </div>
 
-        {/* Editorial Amenities Layout: Categorized Grid */}
+        {/* Categorized Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {AMENITIES.map((amenity) => (
             <div
               key={amenity.id}
-              className="bg-white p-6 rounded-sm border border-border/80 shadow-subtle hover:border-gold/50 transition-all duration-200 flex items-start gap-4"
+              className="bg-paper p-6 rounded-2xl border border-rule shadow-subtle hover:border-accent transition-colors duration-200 flex items-start gap-4"
             >
-              <div className="p-2.5 bg-ivory rounded-sm border border-border shrink-0">
+              <div className="p-2.5 bg-paper-3 rounded-xl border border-rule shrink-0">
                 {renderIcon(amenity.iconName)}
               </div>
               <div>
-                <h3 className="font-serif text-lg font-medium text-charcoal mb-1">
+                <h3 className="font-display text-lg font-medium text-ink mb-1">
                   {amenity.name}
                 </h3>
-                <p className="text-xs text-warm-grey-dark leading-relaxed">
+                <p className="text-xs text-muted leading-relaxed">
                   {amenity.description}
                 </p>
               </div>
@@ -95,25 +90,25 @@ export const AmenitiesSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Verified Feature Banner */}
-        <div className="mt-12 bg-white rounded-sm border border-border p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-subtle">
+        {/* Feature Banner */}
+        <div className="mt-12 bg-paper rounded-2xl border border-rule p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-subtle">
           <div className="flex items-center gap-4 text-left">
-            <div className="p-3 bg-sand rounded-sm text-charcoal shrink-0 border border-border">
-              <Zap className="w-6 h-6 text-gold-dark" />
+            <div className="p-3 bg-paper-2 rounded-xl text-ink shrink-0 border border-rule">
+              <Zap className="w-6 h-6 text-accent" />
             </div>
             <div>
-              <h4 className="font-serif text-lg font-medium text-charcoal">
+              <h4 className="font-display text-lg font-medium text-ink">
                 Heavy-Duty Cummins Power Backup on Premises
               </h4>
-              <p className="text-xs text-warm-grey mt-0.5 max-w-xl">
+              <p className="text-xs text-muted mt-0.5 max-w-xl">
                 Noticeable in our exterior photograph, our dedicated soundproof generator ensures continuous lighting, air conditioning, and water supply during any municipal power fluctuations.
               </p>
             </div>
           </div>
 
           <div className="shrink-0">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-ivory border border-border rounded-sm text-xs font-medium text-charcoal">
-              <ShieldCheck className="w-4 h-4 text-gold-dark" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-paper-3 border border-rule rounded-xl text-xs font-medium text-ink">
+              <ShieldCheck className="w-4 h-4 text-accent" />
               Verified On-Site Facility
             </span>
           </div>

@@ -27,30 +27,26 @@ export const GallerySection: React.FC = () => {
   };
 
   return (
-    <section id="gallery" className="py-16 sm:py-20 lg:py-24 bg-sand-light border-y border-border">
+    <section id="gallery" className="py-16 sm:py-20 lg:py-24 bg-paper-2/40 border-b border-rule">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 mb-3">
-            <span className="h-px w-8 bg-gold"></span>
-            <span className="text-xs uppercase tracking-widest font-semibold text-gold-dark">
-              Visual Tour
-            </span>
-            <span className="h-px w-8 bg-gold"></span>
-          </div>
-
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-charcoal tracking-tight mb-4">
-            Authentic Property <span className="italic font-serif text-gold-dark">Gallery</span>
-          </h2>
-
-          <p className="text-base sm:text-lg text-warm-grey-dark leading-relaxed font-normal">
-            Real, unedited photographs of Kharari Inn showing our property facade, air-conditioned rooms, and green terrace corridor in Ayodhya Dham.
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+          <p className="text-xs text-accent font-medium mb-2.5">
+            Visual tour
           </p>
 
-          <div className="inline-flex items-center gap-1.5 mt-3 text-xs text-charcoal/70 bg-white px-3 py-1 rounded-full border border-border">
-            <Camera className="w-3.5 h-3.5 text-gold-dark" />
-            <span>100% Authentic Property Photography • Click any photo to view full-screen</span>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-ink tracking-tight mb-4">
+            Authentic Property Gallery
+          </h2>
+
+          <p className="text-sm sm:text-base text-muted leading-relaxed font-normal">
+            Real photographs of Kharari Inn showing our property facade, air-conditioned rooms, and green terrace corridor in Ayodhya Dham.
+          </p>
+
+          <div className="inline-flex items-center gap-1.5 mt-4 text-xs text-ink/75 bg-paper px-3 py-1 rounded-full border border-rule">
+            <Camera className="w-3.5 h-3.5 text-accent" />
+            <span>Authentic property photography. Select any photo to view full-screen</span>
           </div>
         </div>
 
@@ -60,26 +56,26 @@ export const GallerySection: React.FC = () => {
           {/* Item 1: Exterior (Spans 7 cols on desktop) */}
           <div
             onClick={() => handleOpenLightbox(0)}
-            className="lg:col-span-7 bg-white rounded-sm border border-border overflow-hidden shadow-subtle group cursor-pointer relative"
+            className="lg:col-span-7 bg-paper rounded-2xl border border-rule overflow-hidden shadow-subtle hover:border-accent group cursor-pointer relative transition-colors duration-200"
           >
-            <div className="aspect-[16/10] overflow-hidden bg-sand/30">
+            <div className="aspect-[16/10] overflow-hidden bg-paper-2">
               <img
                 src={GALLERY_IMAGES[0].image}
                 alt={GALLERY_IMAGES[0].alt}
-                className="w-full h-full object-cover img-zoom"
-                loading="lazy"
+                className="w-full h-full object-cover"
+                loading="eager"
               />
             </div>
-            <div className="p-4 bg-white flex items-center justify-between border-t border-border">
+            <div className="p-4 bg-paper flex items-center justify-between border-t border-rule">
               <div>
-                <span className="text-[10px] uppercase tracking-wider font-semibold text-gold-dark">
+                <p className="text-xs text-accent font-medium mb-0.5">
                   {GALLERY_IMAGES[0].category}
-                </span>
-                <h3 className="font-serif text-lg font-medium text-charcoal">
+                </p>
+                <h3 className="font-display text-lg font-medium text-ink">
                   {GALLERY_IMAGES[0].title}
                 </h3>
               </div>
-              <div className="p-2 text-charcoal/70 group-hover:text-gold-dark group-hover:bg-sand/50 rounded-full transition-colors">
+              <div className="p-2 text-ink/70 group-hover:text-accent group-hover:bg-paper-2 rounded-full transition-colors">
                 <Maximize2 className="w-4 h-4" />
               </div>
             </div>
@@ -88,26 +84,26 @@ export const GallerySection: React.FC = () => {
           {/* Item 2: Double Room (Spans 5 cols on desktop) */}
           <div
             onClick={() => handleOpenLightbox(1)}
-            className="lg:col-span-5 bg-white rounded-sm border border-border overflow-hidden shadow-subtle group cursor-pointer relative"
+            className="lg:col-span-5 bg-paper rounded-2xl border border-rule overflow-hidden shadow-subtle hover:border-accent group cursor-pointer relative transition-colors duration-200"
           >
-            <div className="aspect-[16/10] overflow-hidden bg-sand/30">
+            <div className="aspect-[16/10] overflow-hidden bg-paper-2">
               <img
                 src={GALLERY_IMAGES[1].image}
                 alt={GALLERY_IMAGES[1].alt}
-                className="w-full h-full object-cover img-zoom"
+                className="w-full h-full object-cover"
                 loading="lazy"
               />
             </div>
-            <div className="p-4 bg-white flex items-center justify-between border-t border-border">
+            <div className="p-4 bg-paper flex items-center justify-between border-t border-rule">
               <div>
-                <span className="text-[10px] uppercase tracking-wider font-semibold text-gold-dark">
+                <p className="text-xs text-accent font-medium mb-0.5">
                   {GALLERY_IMAGES[1].category}
-                </span>
-                <h3 className="font-serif text-lg font-medium text-charcoal">
+                </p>
+                <h3 className="font-display text-lg font-medium text-ink">
                   {GALLERY_IMAGES[1].title}
                 </h3>
               </div>
-              <div className="p-2 text-charcoal/70 group-hover:text-gold-dark group-hover:bg-sand/50 rounded-full transition-colors">
+              <div className="p-2 text-ink/70 group-hover:text-accent group-hover:bg-paper-2 rounded-full transition-colors">
                 <Maximize2 className="w-4 h-4" />
               </div>
             </div>
@@ -116,26 +112,26 @@ export const GallerySection: React.FC = () => {
           {/* Item 3: Triple Room (Spans 5 cols on desktop) */}
           <div
             onClick={() => handleOpenLightbox(2)}
-            className="lg:col-span-5 bg-white rounded-sm border border-border overflow-hidden shadow-subtle group cursor-pointer relative"
+            className="lg:col-span-5 bg-paper rounded-2xl border border-rule overflow-hidden shadow-subtle hover:border-accent group cursor-pointer relative transition-colors duration-200"
           >
-            <div className="aspect-[16/10] overflow-hidden bg-sand/30">
+            <div className="aspect-[16/10] overflow-hidden bg-paper-2">
               <img
                 src={GALLERY_IMAGES[2].image}
                 alt={GALLERY_IMAGES[2].alt}
-                className="w-full h-full object-cover img-zoom"
+                className="w-full h-full object-cover"
                 loading="lazy"
               />
             </div>
-            <div className="p-4 bg-white flex items-center justify-between border-t border-border">
+            <div className="p-4 bg-paper flex items-center justify-between border-t border-rule">
               <div>
-                <span className="text-[10px] uppercase tracking-wider font-semibold text-gold-dark">
+                <p className="text-xs text-accent font-medium mb-0.5">
                   {GALLERY_IMAGES[2].category}
-                </span>
-                <h3 className="font-serif text-lg font-medium text-charcoal">
+                </p>
+                <h3 className="font-display text-lg font-medium text-ink">
                   {GALLERY_IMAGES[2].title}
                 </h3>
               </div>
-              <div className="p-2 text-charcoal/70 group-hover:text-gold-dark group-hover:bg-sand/50 rounded-full transition-colors">
+              <div className="p-2 text-ink/70 group-hover:text-accent group-hover:bg-paper-2 rounded-full transition-colors">
                 <Maximize2 className="w-4 h-4" />
               </div>
             </div>
@@ -144,26 +140,26 @@ export const GallerySection: React.FC = () => {
           {/* Item 4: Corridor / Terrace (Spans 7 cols on desktop) */}
           <div
             onClick={() => handleOpenLightbox(3)}
-            className="lg:col-span-7 bg-white rounded-sm border border-border overflow-hidden shadow-subtle group cursor-pointer relative"
+            className="lg:col-span-7 bg-paper rounded-2xl border border-rule overflow-hidden shadow-subtle hover:border-accent group cursor-pointer relative transition-colors duration-200"
           >
-            <div className="aspect-[16/10] overflow-hidden bg-sand/30">
+            <div className="aspect-[16/10] overflow-hidden bg-paper-2">
               <img
                 src={GALLERY_IMAGES[3].image}
                 alt={GALLERY_IMAGES[3].alt}
-                className="w-full h-full object-cover img-zoom"
+                className="w-full h-full object-cover"
                 loading="lazy"
               />
             </div>
-            <div className="p-4 bg-white flex items-center justify-between border-t border-border">
+            <div className="p-4 bg-paper flex items-center justify-between border-t border-rule">
               <div>
-                <span className="text-[10px] uppercase tracking-wider font-semibold text-gold-dark">
+                <p className="text-xs text-accent font-medium mb-0.5">
                   {GALLERY_IMAGES[3].category}
-                </span>
-                <h3 className="font-serif text-lg font-medium text-charcoal">
+                </p>
+                <h3 className="font-display text-lg font-medium text-ink">
                   {GALLERY_IMAGES[3].title}
                 </h3>
               </div>
-              <div className="p-2 text-charcoal/70 group-hover:text-gold-dark group-hover:bg-sand/50 rounded-full transition-colors">
+              <div className="p-2 text-ink/70 group-hover:text-accent group-hover:bg-paper-2 rounded-full transition-colors">
                 <Maximize2 className="w-4 h-4" />
               </div>
             </div>

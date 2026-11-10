@@ -7,56 +7,65 @@ export default {
   theme: {
     extend: {
       colors: {
+        paper: {
+          DEFAULT: 'var(--color-paper)',
+          2: 'var(--color-paper-2)',
+          3: 'var(--color-paper-3)',
+        },
+        ink: {
+          DEFAULT: 'var(--color-ink)',
+          2: 'var(--color-ink-2)',
+        },
+        muted: 'var(--color-muted)',
+        rule: 'var(--color-rule)',
+        accent: {
+          DEFAULT: 'var(--color-accent)',
+          ink: 'var(--color-accent-ink)',
+        },
+        focus: 'var(--color-focus)',
+        whatsapp: 'var(--color-whatsapp)',
         ivory: {
-          DEFAULT: '#FAF8F3',
-          50: '#FDFCFB',
-          100: '#FAF8F3',
-          200: '#F5F0E6',
+          DEFAULT: 'var(--color-paper)',
+          50: 'var(--color-paper)',
+          100: 'var(--color-paper)',
+          200: 'var(--color-paper-2)',
         },
         sand: {
-          DEFAULT: '#F0E9DE',
-          light: '#F8F4EC',
-          dark: '#E2D7C5',
+          DEFAULT: 'var(--color-paper-2)',
+          light: 'var(--color-paper-3)',
+          dark: 'var(--color-rule)',
         },
         charcoal: {
-          DEFAULT: '#29251F',
-          dark: '#1C1915',
-          light: '#423D35',
+          DEFAULT: 'var(--color-ink)',
+          dark: 'var(--color-ink)',
+          light: 'var(--color-ink-2)',
         },
         'warm-grey': {
-          DEFAULT: '#777168',
-          light: '#9E978D',
-          dark: '#5A554D',
+          DEFAULT: 'var(--color-muted)',
+          light: 'var(--color-muted)',
+          dark: 'var(--color-ink-2)',
         },
         gold: {
-          DEFAULT: '#B78B50',
-          dark: '#9A723D',
-          light: '#CFAB79',
-          50: '#FAF5EE',
-        },
-        terracotta: {
-          DEFAULT: '#C3512F',
-          dark: '#A64123',
-          light: '#D96E4E',
-        },
-        burgundy: {
-          DEFAULT: '#7A2234',
-          dark: '#621B2A',
-          light: '#963046',
+          DEFAULT: 'var(--color-accent)',
+          dark: 'var(--color-accent)',
+          light: 'var(--color-accent)',
+          50: 'var(--color-paper-3)',
         },
         border: {
-          DEFAULT: '#E5DED2',
-          light: '#EFEAE1',
-          dark: '#D4CABA',
+          DEFAULT: 'var(--color-rule)',
+          light: 'var(--color-rule)',
+          dark: 'var(--color-rule)',
         }
       },
       fontFamily: {
-        serif: ['"Cormorant Garamond"', 'Playfair Display', 'Georgia', 'serif'],
-        sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-display)', 'Georgia', 'serif'],
+        sans: ['var(--font-body)', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'Georgia', 'serif'],
+        body: ['var(--font-body)', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         'subtle': '0 2px 10px rgba(41, 37, 31, 0.04)',
-        'soft': '0 6px 24px rgba(41, 37, 31, 0.07)',
+        'soft': '0 4px 20px rgba(41, 37, 31, 0.06)',
         'elevated': '0 12px 36px rgba(41, 37, 31, 0.10)',
       }
     },

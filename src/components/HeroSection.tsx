@@ -7,8 +7,8 @@ interface HeroSectionProps {
   onOpenBooking?: () => void;
 }
 
-// Custom authentic temple icon matching the reference mockup
-const TempleIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5 text-[#A6753C]" }) => (
+// Authentic temple icon
+const TempleIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5 text-accent" }) => (
   <svg
     viewBox="0 0 24 24"
     fill="none"
@@ -31,7 +31,7 @@ const TempleIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5 tex
   </svg>
 );
 
-// Custom WhatsApp icon
+// WhatsApp icon
 const WhatsAppIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
   <svg
     viewBox="0 0 24 24"
@@ -59,33 +59,30 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking: _onOpen
   };
 
   return (
-    <section id="home" className="relative pt-4 sm:pt-6 lg:pt-8 pb-8 sm:pb-12 bg-ivory">
+    <section id="home" className="relative pt-6 sm:pt-8 lg:pt-10 pb-8 sm:pb-12 bg-paper">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Eyebrow: A BOUTIQUE STAY IN */}
-        <div className="flex items-center gap-2.5 mb-2.5 sm:mb-3">
-          <span className="h-[1.5px] w-6 sm:w-8 bg-[#A6753C]"></span>
-          <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#A6753C]">
-            A BOUTIQUE STAY IN
-          </span>
-        </div>
+        {/* Destination label in body face, sentence case, untracked */}
+        <p className="text-xs text-accent font-medium mb-2.5">
+          A boutique stay in Ayodhya Dham
+        </p>
 
-        {/* Full Visible Heading: Your Comfortable Stay in Ayodhya Dham */}
-        <h1 className="font-serif text-[2.15rem] leading-[1.15] sm:text-4xl md:text-5xl lg:text-6xl font-normal text-charcoal mb-3 tracking-tight">
-          Your Comfortable Stay in <span className="italic font-serif text-[#A6753C]">Ayodhya Dham</span>
+        {/* Full Visible Headline without mixed roman/italic */}
+        <h1 className="font-display text-[2.2rem] leading-[1.12] sm:text-4xl md:text-5xl lg:text-6xl font-normal text-ink mb-3 tracking-tight">
+          Your Comfortable Stay in Ayodhya Dham
         </h1>
 
-        {/* Short, elegant supporting copy */}
-        <p className="text-xs sm:text-sm md:text-base text-warm-grey-dark leading-relaxed font-normal mb-5 max-w-xl">
+        {/* Supporting copy */}
+        <p className="text-sm sm:text-base text-muted leading-relaxed font-normal mb-6 max-w-xl">
           Comfortable rooms, warm hospitality and a convenient location for your spiritual journey.
         </p>
 
-        {/* CTA Buttons side-by-side */}
-        <div className="flex items-center gap-2.5 sm:gap-3.5 mb-6 sm:mb-8">
+        {/* CTA Buttons */}
+        <div className="flex items-center gap-3 mb-6 sm:mb-8">
           <button
             type="button"
             onClick={handleBookOnWhatsApp}
-            className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm font-semibold text-white bg-[#A6753C] hover:bg-[#8F6230] rounded-xl transition-all duration-200 shadow-sm active:scale-[0.98]"
+            className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm font-medium text-white bg-accent hover:opacity-90 rounded-xl transition-opacity duration-200 shadow-sm active:scale-[0.98]"
           >
             <WhatsAppIcon className="w-4 h-4 text-white shrink-0" />
             <span>Book on WhatsApp</span>
@@ -95,101 +92,101 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking: _onOpen
           <a
             href="#rooms"
             onClick={scrollToRooms}
-            className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm font-semibold text-charcoal hover:text-gold-dark bg-white border border-border/80 hover:border-gold rounded-xl transition-colors shadow-subtle"
+            className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm font-medium text-ink hover:text-accent bg-paper border border-rule hover:border-accent rounded-xl transition-colors shadow-subtle"
           >
             <span>Explore Rooms</span>
-            <ArrowRight className="w-3.5 h-3.5 text-warm-grey shrink-0" />
+            <ArrowRight className="w-3.5 h-3.5 text-muted shrink-0" />
           </a>
         </div>
 
         {/* Prominent Hotel Exterior Photograph */}
-        <div className="relative rounded-2xl overflow-hidden shadow-soft border border-border/80 bg-white group mb-6">
-          <div className="aspect-[4/3] sm:aspect-[16/10] overflow-hidden bg-sand/30">
+        <div className="relative rounded-2xl overflow-hidden shadow-soft border border-rule bg-paper mb-6">
+          <div className="aspect-[4/3] sm:aspect-[16/10] overflow-hidden bg-paper-2">
             <img
               src="/images/kharari-inn-exterior.jpg"
               alt="Kharari Inn authentic boutique hotel exterior in Ayodhya Dham with arched balcony, front parking and official signage"
-              className="w-full h-full object-cover object-center img-zoom transition-transform duration-700"
+              className="w-full h-full object-cover object-center"
               fetchPriority="high"
               loading="eager"
             />
           </div>
 
-          {/* Carousel Pagination Dots matching reference */}
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 px-2.5 py-1 bg-black/25 backdrop-blur-sm rounded-full">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#A6753C]" aria-hidden="true"></span>
+          {/* Carousel indicator dots */}
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 px-2.5 py-1 bg-ink/70 rounded-full">
+            <span className="w-2.5 h-2.5 rounded-full bg-accent" aria-hidden="true"></span>
             <span className="w-2 h-2 rounded-full bg-white/70" aria-hidden="true"></span>
             <span className="w-2 h-2 rounded-full bg-white/70" aria-hidden="true"></span>
           </div>
         </div>
 
         {/* Location Strip */}
-        <div className="bg-[#FAF6F0] border border-border/80 rounded-2xl p-3 sm:p-4 mb-6 shadow-subtle flex items-center justify-between gap-3">
+        <div className="bg-paper-3 border border-rule rounded-2xl p-3 sm:p-4 mb-6 shadow-subtle flex items-center justify-between gap-3">
           <div className="flex items-center gap-3 text-left min-w-0">
-            <div className="w-9 h-9 rounded-full bg-[#EFE6D8] text-[#A6753C] flex items-center justify-center shrink-0 border border-border/50">
+            <div className="w-9 h-9 rounded-full bg-paper-2 text-accent flex items-center justify-center shrink-0 border border-rule">
               <MapPin className="w-4 h-4" />
             </div>
             <div className="min-w-0">
-              <p className="font-semibold text-xs sm:text-sm text-charcoal truncate">
+              <p className="font-medium text-xs sm:text-sm text-ink truncate">
                 Ayodhya Dham, Uttar Pradesh
               </p>
-              <p className="text-[11px] sm:text-xs text-warm-grey truncate">
-                Near Saryu Ghat & Ram Janmabhoomi
+              <p className="text-xs text-muted truncate">
+                Near Saryu Ghat and Ram Janmabhoomi
               </p>
             </div>
           </div>
 
           <div className="flex items-center gap-3 shrink-0">
-            <div className="h-8 w-px bg-border/80 hidden xs:block"></div>
+            <div className="h-8 w-px bg-rule hidden sm:block"></div>
             <a
               href={HOTEL_INFO.contacts.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#EFE8DC] hover:bg-[#E5DDCF] active:bg-[#DCD3C4] text-charcoal rounded-full text-xs font-semibold transition-colors shadow-subtle"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-paper-2 hover:bg-rule/40 text-ink rounded-full text-xs font-medium transition-colors shadow-subtle"
             >
-              <Compass className="w-3.5 h-3.5 text-[#A6753C]" />
+              <Compass className="w-3.5 h-3.5 text-accent" />
               <span className="whitespace-nowrap">Get Directions</span>
             </a>
           </div>
         </div>
 
         {/* Key Property Highlights Strip */}
-        <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-2 pb-6 border-b border-border/60 text-center">
+        <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-2 pb-6 border-b border-rule text-center">
           
           {/* Highlight 1: Shri Ram Janmabhoomi */}
           <div className="flex flex-col items-center justify-center px-1">
             <div className="mb-1.5">
-              <TempleIcon className="w-6 h-6 text-[#A6753C]" />
+              <TempleIcon className="w-6 h-6 text-accent" />
             </div>
-            <p className="font-serif text-base sm:text-lg font-bold text-charcoal leading-tight">
+            <p className="font-display text-base sm:text-lg font-bold text-ink leading-tight">
               ~1.8 km
             </p>
-            <p className="text-[10px] sm:text-xs text-warm-grey leading-tight mt-0.5">
+            <p className="text-xs text-muted leading-tight mt-0.5">
               Shri Ram Janmabhoomi
             </p>
           </div>
 
           {/* Highlight 2: Hanumangarhi & Saryu */}
-          <div className="flex flex-col items-center justify-center border-x border-border/80 px-1">
+          <div className="flex flex-col items-center justify-center border-x border-rule px-1">
             <div className="mb-1.5">
-              <TempleIcon className="w-6 h-6 text-[#A6753C]" />
+              <TempleIcon className="w-6 h-6 text-accent" />
             </div>
-            <p className="font-serif text-base sm:text-lg font-bold text-charcoal leading-tight">
+            <p className="font-display text-base sm:text-lg font-bold text-ink leading-tight">
               ~1.0 km
             </p>
-            <p className="text-[10px] sm:text-xs text-warm-grey leading-tight mt-0.5">
-              Hanumangarhi & Saryu Ghat
+            <p className="text-xs text-muted leading-tight mt-0.5">
+              Hanumangarhi and Saryu Ghat
             </p>
           </div>
 
           {/* Highlight 3: Power Backup */}
           <div className="flex flex-col items-center justify-center px-1">
             <div className="mb-1.5">
-              <Zap className="w-6 h-6 text-[#A6753C]" />
+              <Zap className="w-6 h-6 text-accent" />
             </div>
-            <p className="font-serif text-base sm:text-lg font-bold text-charcoal leading-tight">
+            <p className="font-display text-base sm:text-lg font-bold text-ink leading-tight">
               24/7
             </p>
-            <p className="text-[10px] sm:text-xs text-warm-grey leading-tight mt-0.5">
+            <p className="text-xs text-muted leading-tight mt-0.5">
               Power Backup
             </p>
           </div>

@@ -120,7 +120,6 @@ export const BookingModal: React.FC<BookingModalProps> = ({
       const message = buildWhatsAppBookingMessage(formData);
       const url = createWhatsAppUrl(message, HOTEL_INFO.contacts.primaryWhatsAppRaw);
       openWhatsApp(url);
-      // Close modal after triggering WhatsApp
       setTimeout(() => {
         setIsSubmitting(false);
         onClose();
@@ -135,20 +134,20 @@ export const BookingModal: React.FC<BookingModalProps> = ({
       role="dialog"
       aria-modal="true"
       aria-labelledby="booking-modal-title"
-      className="fixed inset-0 z-50 flex items-center justify-center bg-charcoal-dark/75 backdrop-blur-sm p-4 overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-ink/80 p-4 overflow-y-auto"
       onClick={onClose}
     >
       <div
-        className="relative bg-white rounded-2xl border border-border/80 shadow-elevated w-full max-w-xl my-8 overflow-hidden animate-fadeIn"
+        className="relative bg-paper rounded-2xl border border-rule shadow-elevated w-full max-w-xl my-8 overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="bg-sand-light px-6 py-5 border-b border-border flex items-center justify-between">
+        <div className="bg-paper-2/60 px-6 py-5 border-b border-rule flex items-center justify-between">
           <div>
-            <span className="text-[10px] uppercase tracking-widest font-semibold text-[#A6753C] block">
-              Official WhatsApp Booking Enquiry
-            </span>
-            <h2 id="booking-modal-title" className="font-serif text-2xl font-normal text-charcoal">
+            <p className="text-xs text-accent font-medium mb-1">
+              WhatsApp booking enquiry
+            </p>
+            <h2 id="booking-modal-title" className="font-display text-2xl font-normal text-ink">
               Book Your Stay at Kharari Inn
             </h2>
           </div>
@@ -156,7 +155,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 text-warm-grey hover:text-charcoal hover:bg-border/40 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-gold"
+            className="p-1.5 text-muted hover:text-ink hover:bg-rule/40 rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             aria-label="Close booking modal"
           >
             <X className="w-5 h-5" />
@@ -164,8 +163,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({
         </div>
 
         {/* Process Explanation Alert */}
-        <div className="bg-ivory px-6 py-3 border-b border-border text-xs text-warm-grey-dark flex items-center gap-2.5">
-          <Info className="w-4 h-4 text-gold-dark shrink-0" />
+        <div className="bg-paper-3 px-6 py-3 border-b border-rule text-xs text-muted flex items-center gap-2.5">
+          <Info className="w-4 h-4 text-accent shrink-0" />
           <span>
             Submitting this form prepares your stay enquiry in WhatsApp. Hotel staff will confirm room availability and tariff directly.
           </span>
@@ -176,24 +175,24 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           
           {/* Guest Name */}
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
-              Guest Name <span className="text-terracotta">*</span>
+            <label className="block text-xs font-medium text-ink mb-1.5">
+              Guest name <span className="text-accent">*</span>
             </label>
             <div className="relative">
-              <User className="w-4 h-4 text-warm-grey absolute left-3 top-3" />
+              <User className="w-4 h-4 text-muted absolute left-3 top-3" />
               <input
                 type="text"
                 placeholder="e.g. Ramesh Chandra Sharma"
                 value={formData.guestName}
                 onChange={(e) => setFormData({ ...formData, guestName: e.target.value })}
-                className={`w-full pl-9 pr-3 py-2.5 text-sm bg-white border ${
-                  errors.guestName ? 'border-terracotta ring-1 ring-terracotta' : 'border-border focus:border-gold'
-                } rounded-xl focus:outline-none text-charcoal`}
+                className={`w-full pl-9 pr-3 py-2.5 text-sm bg-paper border ${
+                  errors.guestName ? 'border-accent ring-1 ring-accent' : 'border-rule focus:border-accent'
+                } rounded-xl focus:outline-none text-ink`}
                 required
               />
             </div>
             {errors.guestName && (
-              <p className="mt-1 text-xs text-terracotta flex items-center gap-1">
+              <p className="mt-1 text-xs text-accent flex items-center gap-1">
                 <AlertCircle className="w-3 h-3" />
                 {errors.guestName}
               </p>
@@ -204,24 +203,24 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Check-in */}
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
-                Check-In Date <span className="text-terracotta">*</span>
+              <label className="block text-xs font-medium text-ink mb-1.5">
+                Check-in date <span className="text-accent">*</span>
               </label>
               <div className="relative">
-                <Calendar className="w-4 h-4 text-warm-grey absolute left-3 top-3 pointer-events-none" />
+                <Calendar className="w-4 h-4 text-muted absolute left-3 top-3 pointer-events-none" />
                 <input
                   type="date"
                   min={getTodayDateString()}
                   value={formData.checkInDate}
                   onChange={(e) => setFormData({ ...formData, checkInDate: e.target.value })}
-                  className={`w-full pl-9 pr-3 py-2.5 text-sm bg-white border ${
-                    errors.checkInDate ? 'border-terracotta ring-1 ring-terracotta' : 'border-border focus:border-gold'
-                  } rounded-xl focus:outline-none text-charcoal`}
+                  className={`w-full pl-9 pr-3 py-2.5 text-sm bg-paper border ${
+                    errors.checkInDate ? 'border-accent ring-1 ring-accent' : 'border-rule focus:border-accent'
+                  } rounded-xl focus:outline-none text-ink`}
                   required
                 />
               </div>
               {errors.checkInDate && (
-                <p className="mt-1 text-xs text-terracotta flex items-center gap-1">
+                <p className="mt-1 text-xs text-accent flex items-center gap-1">
                   <AlertCircle className="w-3 h-3" />
                   {errors.checkInDate}
                 </p>
@@ -230,24 +229,24 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
             {/* Check-out */}
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
-                Check-Out Date <span className="text-terracotta">*</span>
+              <label className="block text-xs font-medium text-ink mb-1.5">
+                Check-out date <span className="text-accent">*</span>
               </label>
               <div className="relative">
-                <Calendar className="w-4 h-4 text-warm-grey absolute left-3 top-3 pointer-events-none" />
+                <Calendar className="w-4 h-4 text-muted absolute left-3 top-3 pointer-events-none" />
                 <input
                   type="date"
                   min={formData.checkInDate || getTodayDateString()}
                   value={formData.checkOutDate}
                   onChange={(e) => setFormData({ ...formData, checkOutDate: e.target.value })}
-                  className={`w-full pl-9 pr-3 py-2.5 text-sm bg-white border ${
-                    errors.checkOutDate ? 'border-terracotta ring-1 ring-terracotta' : 'border-border focus:border-gold'
-                  } rounded-xl focus:outline-none text-charcoal`}
+                  className={`w-full pl-9 pr-3 py-2.5 text-sm bg-paper border ${
+                    errors.checkOutDate ? 'border-accent ring-1 ring-accent' : 'border-rule focus:border-accent'
+                  } rounded-xl focus:outline-none text-ink`}
                   required
                 />
               </div>
               {errors.checkOutDate && (
-                <p className="mt-1 text-xs text-terracotta flex items-center gap-1">
+                <p className="mt-1 text-xs text-accent flex items-center gap-1">
                   <AlertCircle className="w-3 h-3" />
                   {errors.checkOutDate}
                 </p>
@@ -260,52 +259,52 @@ export const BookingModal: React.FC<BookingModalProps> = ({
             
             {/* Adults */}
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
-                Adults (12+ yrs) <span className="text-terracotta">*</span>
+              <label className="block text-xs font-medium text-ink mb-1.5">
+                Adults (12+ years) <span className="text-accent">*</span>
               </label>
               <div className="relative">
-                <Users className="w-4 h-4 text-warm-grey absolute left-3 top-3" />
+                <Users className="w-4 h-4 text-muted absolute left-3 top-3" />
                 <select
                   value={formData.adults}
                   onChange={(e) => setFormData({ ...formData, adults: Number(e.target.value) })}
-                  className="w-full pl-9 pr-3 py-2.5 text-sm bg-white border border-border focus:border-gold rounded-xl focus:outline-none text-charcoal"
+                  className="w-full pl-9 pr-3 py-2.5 text-sm bg-paper border border-rule focus:border-accent rounded-xl focus:outline-none text-ink"
                 >
-                  <option value={1}>1 Adult</option>
-                  <option value={2}>2 Adults</option>
-                  <option value={3}>3 Adults</option>
-                  <option value={4}>4 Adults</option>
-                  <option value={5}>5 Adults</option>
-                  <option value={6}>6+ Adults (Group)</option>
+                  <option value={1}>1 adult</option>
+                  <option value={2}>2 adults</option>
+                  <option value={3}>3 adults</option>
+                  <option value={4}>4 adults</option>
+                  <option value={5}>5 adults</option>
+                  <option value={6}>6+ adults (group)</option>
                 </select>
               </div>
             </div>
 
             {/* Children */}
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
-                Children <span className="text-warm-grey font-normal">(Optional)</span>
+              <label className="block text-xs font-medium text-ink mb-1.5">
+                Children <span className="text-muted">(optional)</span>
               </label>
               <select
                 value={formData.children}
                 onChange={(e) => setFormData({ ...formData, children: Number(e.target.value) })}
-                className="w-full px-3 py-2.5 text-sm bg-white border border-border focus:border-gold rounded-xl focus:outline-none text-charcoal"
+                className="w-full px-3 py-2.5 text-sm bg-paper border border-rule focus:border-accent rounded-xl focus:outline-none text-ink"
               >
-                <option value={0}>0 Children</option>
-                <option value={1}>1 Child</option>
-                <option value={2}>2 Children</option>
-                <option value={3}>3+ Children</option>
+                <option value={0}>0 children</option>
+                <option value={1}>1 child</option>
+                <option value={2}>2 children</option>
+                <option value={3}>3+ children</option>
               </select>
             </div>
 
             {/* Preferred Room Type */}
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
-                Room Category <span className="text-terracotta">*</span>
+              <label className="block text-xs font-medium text-ink mb-1.5">
+                Room category <span className="text-accent">*</span>
               </label>
               <select
                 value={formData.roomType}
                 onChange={(e) => setFormData({ ...formData, roomType: e.target.value })}
-                className="w-full px-3 py-2.5 text-sm bg-white border border-border focus:border-gold rounded-xl focus:outline-none text-charcoal"
+                className="w-full px-3 py-2.5 text-sm bg-paper border border-rule focus:border-accent rounded-xl focus:outline-none text-ink"
               >
                 {ROOMS.map((r) => (
                   <option key={r.id} value={r.name}>
@@ -319,38 +318,38 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
           {/* Optional Contact Number */}
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
-              Contact / Mobile Number <span className="text-warm-grey font-normal">(Optional)</span>
+            <label className="block text-xs font-medium text-ink mb-1.5">
+              Contact phone number <span className="text-muted">(optional)</span>
             </label>
             <div className="relative">
-              <Phone className="w-4 h-4 text-warm-grey absolute left-3 top-3" />
+              <Phone className="w-4 h-4 text-muted absolute left-3 top-3" />
               <input
                 type="tel"
                 placeholder="e.g. +91 98765 43210"
                 value={formData.contactNumber}
                 onChange={(e) => setFormData({ ...formData, contactNumber: e.target.value })}
-                className="w-full pl-9 pr-3 py-2.5 text-sm bg-white border border-border focus:border-gold rounded-xl focus:outline-none text-charcoal"
+                className="w-full pl-9 pr-3 py-2.5 text-sm bg-paper border border-rule focus:border-accent rounded-xl focus:outline-none text-ink"
               />
             </div>
           </div>
 
           {/* Additional Requirements */}
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
-              Special Requests / Note <span className="text-warm-grey font-normal">(Optional)</span>
+            <label className="block text-xs font-medium text-ink mb-1.5">
+              Special requests or note <span className="text-muted">(optional)</span>
             </label>
             <textarea
               rows={2}
               placeholder="e.g. Ground floor preference for senior citizens, early morning temple darshan arrival, parking space requirement..."
               value={formData.additionalRequirements}
               onChange={(e) => setFormData({ ...formData, additionalRequirements: e.target.value })}
-              className="w-full px-3 py-2 text-sm bg-white border border-border focus:border-gold rounded-xl focus:outline-none text-charcoal"
+              className="w-full px-3 py-2 text-sm bg-paper border border-rule focus:border-accent rounded-xl focus:outline-none text-ink"
             />
           </div>
 
           {/* Submit Action */}
-          <div className="pt-3 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div className="text-[11px] text-warm-grey text-left">
+          <div className="pt-3 border-t border-rule flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div className="text-xs text-muted text-left">
               Official WhatsApp: <strong>{HOTEL_INFO.contacts.primaryWhatsApp}</strong>
             </div>
 
@@ -358,7 +357,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               <button
                 type="button"
                 onClick={onClose}
-                className="w-1/2 sm:w-auto px-4 py-2.5 text-xs font-semibold text-charcoal hover:bg-sand/40 border border-border rounded-xl transition-colors"
+                className="w-1/2 sm:w-auto px-4 py-2.5 text-xs font-medium text-ink hover:bg-paper-2 border border-rule rounded-xl transition-colors cursor-pointer"
               >
                 Cancel
               </button>
@@ -366,7 +365,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-1/2 sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 text-xs font-semibold text-white bg-[#25D366] hover:bg-[#20ba59] rounded-xl transition-all shadow-subtle hover:shadow-soft active:scale-[0.98]"
+                className="w-1/2 sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 text-xs font-medium text-white bg-whatsapp hover:opacity-90 rounded-xl transition-opacity shadow-subtle active:scale-[0.98] cursor-pointer"
               >
                 <MessageSquare className="w-4 h-4" />
                 <span>{isSubmitting ? 'Opening WhatsApp...' : 'Send on WhatsApp'}</span>

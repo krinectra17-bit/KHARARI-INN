@@ -86,8 +86,8 @@ assert(jsCode.includes('wa.me'), 'wa.me integration present in bundle');
 const cssFile = assets.find(f => f.endsWith('.css'));
 assert(Boolean(cssFile), 'Production CSS stylesheet found');
 const cssCode = fs.readFileSync(path.join(distDir, 'assets', cssFile), 'utf-8');
-assert(cssCode.includes('#FAF8F3') || cssCode.includes('#faf8f3'), 'Warm ivory #FAF8F3 background present in stylesheet');
-assert(cssCode.includes('#B78B50') || cssCode.includes('#b78b50'), 'Antique gold #B78B50 present in stylesheet');
+assert(cssCode.includes('#FAF8F3') || cssCode.includes('#faf8f3') || cssCode.includes('oklch(97.8%'), 'Warm ivory token background present in stylesheet');
+assert(cssCode.includes('#B78B50') || cssCode.includes('#b78b50') || cssCode.includes('--color-accent'), 'Antique gold token present in stylesheet');
 
 // 8. Test WhatsApp Message Generator Logic in isolation
 function testWhatsAppLogic() {
